@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+dir="$(dirname "$(readlink -e "${BASH_SOURCE[0]}")")"
+mk-link() {
+    if [[ "$(readlink -e ~/."$1")" != "$dir/$1" ]]; then
+        ln -sT "$dir/$1" ~/."$1"
+    fi
+}
+
+mk-link bashrc
+mk-link profile
