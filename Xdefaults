@@ -1,0 +1,25 @@
+XTerm*geometry: 120x64
+XTerm*saveLines: 100000
+
+XTerm*faceName: Consolas:size=10
+
+XTerm*foreground: #d0d0d0
+XTerm*background: #000000
+
+XTerm*color0: #000000
+XTerm*color1: #d80036
+XTerm*color2: #00c322
+XTerm*color3: #a68d00
+XTerm*color4: #2862e8
+XTerm*color5: #cd0074
+XTerm*color6: #00a287
+XTerm*color7: #d0d0d0
+
+XTerm*color8: #555555
+XTerm*color9: #f93e58
+XTerm*color10: #9bed00
+XTerm*color11: #ffd900
+XTerm*color12: #6c8dd5
+XTerm*color13: #e83a93
+XTerm*color14: #5ed0bd
+XTerm*color15: #ffffff

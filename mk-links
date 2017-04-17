@@ -9,6 +9,7 @@ mk-link() {
     fi
 }
 
+mk-link Xdefaults
 mk-link bashrc
 mk-link config
 mk-link gitconfig
