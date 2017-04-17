@@ -13,6 +13,7 @@ set guioptions-=T " No toolbar
 set number
 set cursorline
 set statusline=%<%n\ %f\ [%{&ff}%Y]%([%M%R]%)%=%P\ %l:%c
+set title
 
 set hlsearch
 set ignorecase
