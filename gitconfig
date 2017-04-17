@@ -1,0 +1,7 @@
+[user]
+	name = David Emett
+	email = dave@sp4m.net
+[core]
+	excludesfile = ~/.gitignore-global
+[merge]
+	conflictstyle = diff3
