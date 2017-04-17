@@ -13,3 +13,5 @@ mk-link bashrc
 mk-link gitconfig
 mk-link gitignore-global
 mk-link profile
+mk-link vim
+mk-link vimrc

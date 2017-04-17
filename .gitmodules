@@ -1,0 +1,45 @@
+[submodule "vim/bundle/pathogen"]
+	path = vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/commentary"]
+	path = vim/bundle/commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/bundle/eunuch"]
+	path = vim/bundle/eunuch
+	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim/bundle/fish"]
+	path = vim/bundle/fish
+	url = https://github.com/dag/vim-fish.git
+[submodule "vim/bundle/flagship"]
+	path = vim/bundle/flagship
+	url = https://github.com/tpope/vim-flagship.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/opencl"]
+	path = vim/bundle/opencl
+	url = https://github.com/petRUShka/vim-opencl.git
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/rust"]
+	path = vim/bundle/rust
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule "vim/bundle/sensible"]
+	path = vim/bundle/sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/vinegar"]
+	path = vim/bundle/vinegar
+	url = https://github.com/tpope/vim-vinegar.git
