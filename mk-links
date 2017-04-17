@@ -10,6 +10,7 @@ mk-link() {
 }
 
 mk-link bashrc
+mk-link config
 mk-link gitconfig
 mk-link gitignore-global
 mk-link profile
