@@ -15,3 +15,5 @@
 	autostash = true
 [pull]
 	rebase = true
+[alias]
+	bdate = for-each-ref --sort=committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(end)%(refname:short)%(color:reset)' refs/heads
