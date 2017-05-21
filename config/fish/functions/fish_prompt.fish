@@ -8,10 +8,12 @@ function fish_prompt
     set_color -o black
     printf '%s ' (date '+%H:%M')
 
-    set_color -o blue
-    printf '%s@%s ' (whoami) (hostname)
+    set_color $fish_color_user
+    printf '%s@' (whoami)
+    set_color $fish_color_host
+    printf '%s ' (hostname)
 
-    set_color -o yellow
+    set_color $fish_color_cwd
     set d (pwd)
     if test $d = $HOME
         printf '~'
