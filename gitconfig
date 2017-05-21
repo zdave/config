@@ -5,3 +5,9 @@
 	excludesfile = ~/.gitignore-global
 [merge]
 	conflictstyle = diff3
+[diff]
+	algorithm = patience
+[rebase]
+	autostash = true
+[pull]
+	rebase = true
