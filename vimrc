@@ -35,6 +35,8 @@ set modelines=0
 set shell=bash
 set wildmode=longest:full
 
+let g:syntastic_python_python_exec = "python3"
+
 "" Auto commands
 
 function! s:StripTrailingWhitespace()
