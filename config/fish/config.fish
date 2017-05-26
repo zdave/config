@@ -25,6 +25,8 @@ set fish_color_user -o blue
 set fish_color_host -o blue
 set fish_color_cwd -o yellow
 
+set fish_user_paths ~/bin
+
 if grep Microsoft /proc/version >/dev/null
     # WSL. Assume X server running on :0...
     set -x DISPLAY :0
