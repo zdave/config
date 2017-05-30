@@ -1,4 +1,4 @@
-function pwd_collapse_home
+function pwd-collapse-home
     if test $PWD = $HOME
         echo '~'
     else

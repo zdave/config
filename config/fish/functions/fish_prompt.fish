@@ -14,7 +14,7 @@ function fish_prompt
     printf '%s ' (hostname)
 
     set_color $fish_color_cwd
-    printf '%s' (pwd_collapse_home)
+    printf '%s' (pwd-collapse-home)
 
     set -l git_sha (git rev-parse --short HEAD ^/dev/null)
     if test $status -eq 0
