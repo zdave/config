@@ -22,6 +22,7 @@ mk-dot-link bashrc
 mk-dot-link config
 mk-dot-link gitconfig
 mk-dot-link gitignore-global
+mk-dot-link parallel/will-cite
 mk-dot-link profile
 mk-dot-link vim
 mk-dot-link vimrc
