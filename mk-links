@@ -13,9 +13,15 @@ end
 
 set dir (dirname (readlink -e (status current-filename)))
 
+function mk-plain-link -a path
+   mk-link ~/$path $dir/$path
+end
+
 function mk-dot-link -a path
    mk-link ~/.$path $dir/$path
 end
+
+mk-plain-link bin/rre
 
 mk-dot-link Xdefaults
 mk-dot-link bashrc

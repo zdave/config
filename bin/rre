@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import re
+import subprocess
+import sys
+import tempfile
+
+def old_new_pairs(args):
+    r = re.compile(args.pattern)
+    for old in os.listdir():
+        new = r.sub(args.replacement, old)
+        if old != new:
+            yield old, new
+
+def check_collisions(old_to_new):
+    new_to_old = {}
+    for old, new in old_to_new.items():
+        if new in new_to_old:
+            print('Both "%s" and "%s" ==> "%s"!' % (new_to_old[new], old, new),
+                file=sys.stderr)
+            sys.exit(1)
+        new_to_old[new] = old
+
+def check_existing(old_to_new):
+    for old, new in old_to_new.items():
+        if (new not in old_to_new) and os.path.lexists(new):
+            print('"%s" ==> "%s" but "%s" already exists!' % (old, new, new),
+                file=sys.stderr)
+            sys.exit(1)
+
+def raw_rename(old, new, args):
+    print('"%s" ==> "%s"' % (old, new), file=sys.stderr)
+    if not args.dry_run:
+        if args.git:
+            subprocess.check_call(['git', 'mv', old, new])
+        else:
+            os.rename(old, new)
+
+def do_renames(old_to_new, args):
+    started = set()
+    done = set()
+
+    temp_dir = None
+    temp_name = {}
+
+    def rename(old):
+        nonlocal temp_dir
+
+        if old in done:
+            return
+
+        if old in started:
+            # Cycle...
+            if temp_dir is None:
+                temp_dir = tempfile.mkdtemp(dir='.')
+            assert old not in temp_name
+            temp_name[old] = os.path.join(temp_dir, old)
+            raw_rename(old, temp_name[old], args)
+            return
+
+        started.add(old)
+
+        new = old_to_new[old]
+        if new in old_to_new:
+            rename(new)
+
+        raw_rename(temp_name.pop(old, old), new, args)
+
+        done.add(old)
+
+    for old in old_to_new:
+        rename(old)
+
+    if temp_dir is not None:
+        os.rmdir(temp_dir)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--git', action='store_true')
+    parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('pattern')
+    parser.add_argument('replacement')
+    args = parser.parse_args()
+
+    old_to_new = dict(old_new_pairs(args))
+    check_collisions(old_to_new)
+    check_existing(old_to_new)
+    do_renames(old_to_new, args)
+
+main()
