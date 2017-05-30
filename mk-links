@@ -1,19 +1,28 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
-set -e
+set exit_status 0
 
-dir="$(dirname "$(readlink -e "${BASH_SOURCE[0]}")")"
-mk-link() {
-    if [[ "$(readlink -e ~/."$1")" != "$dir/$1" ]]; then
-        ln -sT "$dir/$1" ~/."$1"
-    fi
-}
+function mk-link -a link -a target
+   if not set current (readlink $link); or test $current != $target
+      if not ln -sT $target $link
+         set -g exit_status 1
+      end
+   end
+end
 
-mk-link Xdefaults
-mk-link bashrc
-mk-link config
-mk-link gitconfig
-mk-link gitignore-global
-mk-link profile
-mk-link vim
-mk-link vimrc
+set dir (dirname (readlink -e (status current-filename)))
+
+function mk-dot-link -a path
+   mk-link ~/.$path $dir/$path
+end
+
+mk-dot-link Xdefaults
+mk-dot-link bashrc
+mk-dot-link config
+mk-dot-link gitconfig
+mk-dot-link gitignore-global
+mk-dot-link profile
+mk-dot-link vim
+mk-dot-link vimrc
+
+exit $exit_status
