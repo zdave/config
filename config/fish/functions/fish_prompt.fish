@@ -1,5 +1,5 @@
 function fish_prompt
-    set s $status
+    set -l s $status
     if test $s -ne 0
         set_color -o red
         printf '%s ' $s
@@ -16,10 +16,10 @@ function fish_prompt
     set_color $fish_color_cwd
     printf '%s' (pwd_collapse_home)
 
-    set git_sha (git rev-parse --short HEAD ^/dev/null)
+    set -l git_sha (git rev-parse --short HEAD ^/dev/null)
     if test $status -eq 0
         set_color -o green
-        set git_branch (git symbolic-ref --short HEAD ^/dev/null)
+        set -l git_branch (git symbolic-ref --short HEAD ^/dev/null)
         if test $status -eq 0
             printf ' %s' $git_branch
         else
