@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+import argparse
+import json
+import os
+import pipes
+
+def fish_set(k, v):
+    if v is None:
+        print('set -e %s;' % k)
+    else:
+        if k == 'PATH':
+            vs = v.split(':') if v else []
+        else:
+            vs = [v]
+        print('set -gx %s %s;' % (k, ' '.join(pipes.quote(v) for v in vs)))
+
+def diff(before, after, set_fn):
+    for k in set(before) - set(after):
+        set_fn(k, None)
+
+    for k, v in after.items():
+        if before.get(k) != v:
+            set_fn(k, v)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('before')
+    parser.add_argument('shell', choices=['fish'])
+    args = parser.parse_args()
+
+    with open(args.before) as f:
+        before = json.load(f)
+
+    set_fn = {'fish': fish_set}[args.shell]
+
+    diff(before, os.environ, set_fn)
+
+main()

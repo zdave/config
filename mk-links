@@ -21,6 +21,9 @@ function mk-dot-link -a path
     mk-link ~/.$path $dir/$path
 end
 
+mk-plain-link bin/bash-source-env-diff
+mk-plain-link bin/env-diff
+mk-plain-link bin/env-dump
 mk-plain-link bin/rre
 
 mk-dot-link Xdefaults

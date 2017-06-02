@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+shell="$1" &&
+shift &&
+
+temp="$(mktemp)" &&
+trap 'rm "$temp"' EXIT &&
+
+env env-dump >"$temp" &&
+source "$@" >&2 &&
+env env-diff "$temp" "$shell"
