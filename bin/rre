@@ -34,7 +34,7 @@ def raw_rename(old, new, args):
     print('"%s" ==> "%s"' % (old, new), file=sys.stderr)
     if not args.dry_run:
         if args.git:
-            subprocess.check_call(['git', 'mv', old, new])
+            subprocess.check_call(['git', 'mv', '--', old, new])
         else:
             os.rename(old, new)
 
