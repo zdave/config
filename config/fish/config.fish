@@ -29,6 +29,6 @@ set fish_user_paths ~/bin
 
 if grep Microsoft /proc/version >/dev/null
     # WSL. Assume X server running on :0...
-    set -x DISPLAY :0
+    set -x DISPLAY localhost:0
 end
 set -x EDITOR vim
