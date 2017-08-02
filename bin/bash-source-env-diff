@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-shell="$1" &&
+bash_source_env_diff_shell="$1" &&
 shift &&
 
-temp="$(mktemp)" &&
-trap 'rm "$temp"' EXIT &&
+bash_source_env_diff_temp="$(mktemp)" &&
+trap 'rm "$bash_source_env_diff_temp"' EXIT &&
 
-env env-dump >"$temp" &&
+env env-dump >"$bash_source_env_diff_temp" &&
 source "$@" >&2 &&
-env env-diff "$temp" "$shell"
+env env-diff "$bash_source_env_diff_temp" "$bash_source_env_diff_shell"
