@@ -6,6 +6,7 @@ execute pathogen#infect()
 colorscheme dave
 
 set guifont=Consolas\ 10
+set guioptions-=a " No autoselect
 set guioptions+=f " Don't fork
 set guioptions-=m " No menu
 set guioptions-=T " No toolbar
@@ -29,6 +30,7 @@ let g:pyindent_continue = "&shiftwidth"
 let g:pyindent_nested_paren = "0"
 let g:pyindent_open_paren = "&shiftwidth"
 
+set clipboard=unnamed
 set noequalalways " Don't resize all windows on split/close
 set hidden " Allow hiding of modified buffers
 set modelines=0
@@ -140,13 +142,6 @@ imap <c-up> <esc><c-up>
 imap <c-down> <esc><c-down>
 imap <c-left> <esc><c-left>
 imap <c-right> <esc><c-right>
-
-" Easy clipboard copy and paste
-nnoremap <c-c> "+y
-nnoremap <c-c><c-c> "+yy
-vnoremap <c-c> "+y
-nnoremap <leader>v "+p
-nnoremap <leader>V "+P
 
 " Snippets
 nmap <c-s> i<c-s>
