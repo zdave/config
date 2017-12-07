@@ -1,6 +1,6 @@
 umask 022
 
-set -e fish_greeting
+set fish_greeting
 
 set fish_color_error -o red
 set fish_color_command -o white
