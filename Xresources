@@ -1,0 +1,44 @@
+XTerm*toolBar: false
+
+XTerm*scrollBar: true
+XTerm*rightScrollBar: true
+XTerm*VT100.scrollbar.translations: #override \n\
+    <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+    <Btn1Motion>: MoveThumb() NotifyThumb()
+
+XTerm*scrollTtyOutput: false
+XTerm*scrollKey: true
+XTerm*multiScroll: true
+
+XTerm*VT100*translations: #override \n\
+    ~Ctrl ~Meta <Btn3Down>: ignore() \n\
+    ~Meta <Btn3Motion>: ignore() \n\
+    ~Ctrl ~Meta <Btn3Up>: insert-selection(PRIMARY, CUT_BUFFER0)
+
+XTerm*charClass: 33:48,35:48,37-38:48,43-47:48,58:48,61:48,63-64:48,95:48,126:48
+
+XTerm*geometry: 120x64
+XTerm*saveLines: 20000
+
+XTerm*faceName: Consolas:size=10
+
+XTerm*foreground: #d0d0d0
+XTerm*background: #000000
+
+XTerm*color0: #000000
+XTerm*color1: #d80036
+XTerm*color2: #00c322
+XTerm*color3: #a68d00
+XTerm*color4: #2862e8
+XTerm*color5: #cd0074
+XTerm*color6: #00a287
+XTerm*color7: #d0d0d0
+
+XTerm*color8: #555555
+XTerm*color9: #f93e58
+XTerm*color10: #9bed00
+XTerm*color11: #ffd900
+XTerm*color12: #6c8dd5
+XTerm*color13: #e83a93
+XTerm*color14: #5ed0bd
+XTerm*color15: #ffffff
