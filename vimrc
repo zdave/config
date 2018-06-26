@@ -30,7 +30,7 @@ let g:pyindent_continue = "&shiftwidth"
 let g:pyindent_nested_paren = "0"
 let g:pyindent_open_paren = "&shiftwidth"
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 set noequalalways " Don't resize all windows on split/close
 set hidden " Allow hiding of modified buffers
 set modelines=0
