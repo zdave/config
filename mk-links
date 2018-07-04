@@ -29,7 +29,8 @@ mk-plain-link bin/rre
 mk-dot-link Xdefaults
 mk-dot-link Xresources
 mk-dot-link bashrc
-mk-dot-link config
+mk-dot-link config/fish
+mk-dot-link config/fontconfig
 mk-dot-link gitconfig
 mk-dot-link gitignore-global
 mk-dot-link parallel/will-cite
