@@ -1,45 +1,47 @@
-XTerm*toolBar: false
+XTerm.toolBar: false
 
-XTerm*scrollBar: true
-XTerm*rightScrollBar: true
-XTerm*VT100.scrollbar.translations: #override \n\
+XTerm*vt100.scrollBar: true
+XTerm*vt100.rightScrollBar: true
+XTerm*vt100.scrollbar.translations: #override \n\
     <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
     <Btn1Motion>: MoveThumb() NotifyThumb()
+XTerm*vt100.scrollbar.foreground: #ffffff
+XTerm*vt100.scrollbar.background: #000000
 
-XTerm*scrollTtyOutput: false
-XTerm*scrollKey: true
-XTerm*multiScroll: true
+XTerm*vt100.scrollTtyOutput: false
+XTerm*vt100.scrollKey: true
+XTerm*vt100.multiScroll: true
 
-XTerm*selectToClipboard: true
-XTerm*VT100*translations: #override \n\
+XTerm*vt100.selectToClipboard: true
+XTerm*vt100.translations: #override \n\
     ~Ctrl ~Meta <Btn3Down>: ignore() \n\
     ~Meta <Btn3Motion>: ignore() \n\
     ~Ctrl ~Meta <Btn3Up>: insert-selection(CLIPBOARD, CUT_BUFFER0)
 
-XTerm*charClass: 33:48,35:48,37-38:48,43-47:48,58:48,61:48,63-64:48,95:48,126:48
+XTerm*vt100.charClass: 33:48,35:48,37-38:48,43-47:48,58:48,61:48,63-64:48,95:48,126:48
 
-XTerm*geometry: 120x64
-XTerm*saveLines: 20000
+XTerm*vt100.geometry: 120x64
+XTerm*vt100.saveLines: 20000
 
-XTerm*faceName: Consolas:size=10
+XTerm*vt100.faceName: Consolas:size=10
 
-XTerm*foreground: #d0d0d0
-XTerm*background: #000000
+XTerm*vt100.foreground: #d0d0d0
+XTerm*vt100.background: #000000
 
-XTerm*color0: #000000
-XTerm*color1: #d80036
-XTerm*color2: #00c322
-XTerm*color3: #a68d00
-XTerm*color4: #2862e8
-XTerm*color5: #cd0074
-XTerm*color6: #00a287
-XTerm*color7: #d0d0d0
+XTerm*vt100.color0: #000000
+XTerm*vt100.color1: #d80036
+XTerm*vt100.color2: #00c322
+XTerm*vt100.color3: #a68d00
+XTerm*vt100.color4: #2862e8
+XTerm*vt100.color5: #cd0074
+XTerm*vt100.color6: #00a287
+XTerm*vt100.color7: #d0d0d0
 
-XTerm*color8: #555555
-XTerm*color9: #f93e58
-XTerm*color10: #9bed00
-XTerm*color11: #ffd900
-XTerm*color12: #6c8dd5
-XTerm*color13: #e83a93
-XTerm*color14: #5ed0bd
-XTerm*color15: #ffffff
+XTerm*vt100.color8: #555555
+XTerm*vt100.color9: #f93e58
+XTerm*vt100.color10: #9bed00
+XTerm*vt100.color11: #ffd900
+XTerm*vt100.color12: #6c8dd5
+XTerm*vt100.color13: #e83a93
+XTerm*vt100.color14: #5ed0bd
+XTerm*vt100.color15: #ffffff
