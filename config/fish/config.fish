@@ -32,3 +32,6 @@ if grep Microsoft /proc/version >/dev/null
     set -x DISPLAY localhost:0
 end
 set -x EDITOR vim
+if test -z $SSH_AUTH_SOCK
+    set -x SSH_AUTH_SOCK ~/.ssh/agent
+end
