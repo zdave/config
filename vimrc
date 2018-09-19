@@ -41,15 +41,18 @@ let g:syntastic_python_python_exec = "python3"
 
 "" Auto commands
 
-function! s:StripTrailingWhitespace()
+function! s:MaybeStripTrailingWhitespace()
+    if &filetype == "diff"
+        return
+    endif
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
 endfunction
-augroup pre_write_strip_trailing_whitespace
+augroup pre_write_maybe_strip_trailing_whitespace
     autocmd!
-    autocmd BufWritePre * call <sid>StripTrailingWhitespace()
+    autocmd BufWritePre * call <sid>MaybeStripTrailingWhitespace()
 augroup end
 
 "" Leader mappings
