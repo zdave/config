@@ -43,3 +43,6 @@
 [submodule "vim/bundle/vinegar"]
 	path = vim/bundle/vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
