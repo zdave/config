@@ -1,3 +1,5 @@
+Include config-local
+
 Host *
     ControlMaster auto
     ControlPath ~/.ssh/master/%C
