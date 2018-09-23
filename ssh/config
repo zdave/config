@@ -1,4 +1,5 @@
-Include config-local
+Host *.broadcom.com *.broadcom.net
+    ProxyCommand ssh zing.sp4m.net nc %h %p
 
 Host *
     ControlMaster auto
