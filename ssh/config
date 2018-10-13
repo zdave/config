@@ -1,5 +1,5 @@
 Host *.broadcom.com *.broadcom.net
-    ProxyCommand ssh zing.sp4m.net nc %h %p
+    ProxyCommand setsid ssh zing.sp4m.net nc %h %p
 
 Host *
     AddKeysToAgent yes
