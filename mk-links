@@ -29,13 +29,13 @@ mk-plain-link bin/env-dump
 mk-plain-link bin/rre
 
 mk-dot-link Xresources
-mk-dot-link bashrc
 mk-dot-link config/fish
 mk-dot-link config/fontconfig
 mk-dot-link gitconfig
 mk-dot-link gitignore-global
 mk-dot-link parallel/will-cite
 mk-dot-link profile
+mk-dot-link profile-env
 mk-dot-link ssh/authorized_keys
 mk-dot-link ssh/config
 mk-dot-link vim
