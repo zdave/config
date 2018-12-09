@@ -17,8 +17,6 @@
 	rebase = true
 [push]
 	default = upstream
-[submodule]
-	recurse = true
 [alias]
 	bdate = for-each-ref --sort=committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(end)%(refname:short)%(color:reset)' refs/heads
 	wd = diff --color-words='[A-Z]+[a-z]*|[a-z]+|[0-9]+|[^[:space:]]'
