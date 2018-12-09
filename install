@@ -26,7 +26,13 @@ mkdir -p ~/.ssh/master
 mk-plain-link bin/bash-source-env-diff
 mk-plain-link bin/env-diff
 mk-plain-link bin/env-dump
+mk-plain-link bin/xrandr-normal
 mk-plain-link bin/rre
+if test (hostname -f) = zort.sp4m.net
+    mk-plain-link bin/headphones
+    mk-plain-link bin/speakers
+    mk-plain-link bin/toggle-projector
+end
 
 mk-dot-link Xresources
 mk-dot-link config/fish

@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+pactl set-card-profile alsa_card.pci-0000_00_1b.0 output:analog-stereo
+pactl set-sink-port alsa_output.pci-0000_00_1b.0.analog-stereo analog-output-headphones
