@@ -28,7 +28,6 @@ mk-plain-link bin/env-diff
 mk-plain-link bin/env-dump
 mk-plain-link bin/rre
 
-mk-dot-link Xdefaults
 mk-dot-link Xresources
 mk-dot-link bashrc
 mk-dot-link config/fish
