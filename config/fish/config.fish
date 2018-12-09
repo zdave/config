@@ -27,10 +27,6 @@ set fish_color_cwd -o yellow
 
 set fish_user_paths ~/bin
 
-if grep Microsoft /proc/version >/dev/null
-    # WSL. Assume X server running on :0...
-    set -x DISPLAY localhost:0
-end
 set -x EDITOR vim
 if test -z $SSH_AUTH_SOCK
     set -x SSH_AUTH_SOCK ~/.ssh/agent
