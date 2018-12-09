@@ -28,6 +28,3 @@ set fish_color_cwd -o yellow
 set fish_user_paths ~/bin
 
 set -x EDITOR vim
-if test -z $SSH_AUTH_SOCK
-    set -x SSH_AUTH_SOCK ~/.ssh/agent
-end
