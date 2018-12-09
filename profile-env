@@ -7,3 +7,7 @@ EOF
 )"
 
 export EDITOR=vim
+
+if [ -f /usr/local/share/brcm-vpn/brcm-via-vpn.pac ]; then
+    export auto_proxy=file:///usr/local/share/brcm-vpn/brcm-via-vpn.pac
+fi
