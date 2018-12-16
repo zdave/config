@@ -26,7 +26,6 @@ if status --is-interactive
     set fish_pager_color_description brblack
     set fish_pager_color_progress normal
 
-    set fish_color_user -o blue
     set fish_color_host -o blue
     set fish_color_cwd -o yellow
 end

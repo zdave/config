@@ -8,8 +8,6 @@ function fish_prompt
     set_color -o black
     printf '%s ' (date '+%H:%M')
 
-    set_color $fish_color_user
-    printf '%s@' (whoami)
     set_color $fish_color_host
     printf '%s ' (hostname)
 
