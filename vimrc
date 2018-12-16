@@ -13,7 +13,8 @@ set guioptions-=T " No toolbar
 
 set number
 set cursorline
-set statusline=%<%n\ %f\ [%{&ff}%Y]%([%M%R]%)%=%P\ %l:%c
+set showtabline=1 " Only if there are at least two tabs
+set statusline=%<%f\ [%{&ff}%Y]%([%M%R]%)%=%P\ %l:%c
 set title
 
 set hlsearch
