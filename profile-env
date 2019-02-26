@@ -9,5 +9,5 @@ EOF
 export EDITOR=vim
 
 if [ -f /usr/local/share/brcm-vpn/brcm-via-vpn.pac ]; then
-    export auto_proxy=file:///usr/local/share/brcm-vpn/brcm-via-vpn.pac
+    export auto_proxy="data:application/x-javascript-config;base64,$(base64 -w0 /usr/local/share/brcm-vpn/brcm-via-vpn.pac)"
 fi
