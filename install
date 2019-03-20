@@ -47,7 +47,7 @@ mk-dot-link ssh/config
 mk-dot-link vim
 mk-dot-link vimrc
 
-if which systemctl; and test (count (systemctl --user --no-legend list-unit-files pulseaudio.socket)) -ne 0
+if which systemctl >/dev/null; and test (count (systemctl --user --no-legend list-unit-files pulseaudio.socket)) -ne 0
     systemctl --user --quiet enable pulseaudio.socket
 end
 
