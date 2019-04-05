@@ -7,6 +7,7 @@ EOF
 )"
 
 export EDITOR=vim
+export PYTHONSTARTUP=~/.python-startup.py
 
 if [ -f /usr/local/share/brcm-vpn/brcm-via-vpn.pac ]; then
     export auto_proxy="data:application/x-javascript-config;base64,$(base64 -w0 /usr/local/share/brcm-vpn/brcm-via-vpn.pac)"

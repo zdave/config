@@ -44,6 +44,7 @@ mk-dot-link msmtprc
 mk-dot-link parallel/will-cite
 mk-dot-link profile
 mk-dot-link profile-env
+mk-dot-link python-startup.py
 mk-dot-link ssh/authorized_keys
 mk-dot-link ssh/config
 mk-dot-link vim
