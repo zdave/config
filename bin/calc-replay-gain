@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+set -o pipefail
+
+if [ $# -ge 1 ]; then
+    cd "$1"
+fi
+
+dirs_for() {
+    find -name "*.$1" -print0 | xargs -0r dirname -z | sort -z | uniq -z
+}
+
+per_dir() {
+    local ext="$1"; shift
+    dirs_for "$ext" | parallel -0n1 "$@" "{=Q(\$_)=}/*.$ext"
+}
+
+per_dir flac metaflac --add-replay-gain --
+per_dir m4a aacgain -q -s r # Does not support --
+per_dir mp3 mp3gain -q -s r -s i # Ditto
+per_dir ogg vorbisgain -aq --
