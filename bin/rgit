@@ -1,0 +1,2 @@
+#!/bin/sh
+exec find -type d -exec test -e '{}/.git' ';' -prune -print -exec git -C '{}' "$@" ';'
