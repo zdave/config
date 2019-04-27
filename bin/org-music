@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+
+import click
+import errno
+import mutagen
+import mutagen.flac
+import mutagen.mp3
+import mutagen.mp4
+import mutagen.oggvorbis
+import os
+
+def get_ideal_filename(root, f):
+    def get(key):
+        v = f.get(key)
+        if v is None:
+            return None
+        assert len(v) == 1
+        return v[0]
+
+    def get_mp3(key):
+        v = f.get(key)
+        if v is None:
+            return None
+        assert len(v.text) == 1
+        return v.text[0]
+
+    def get_num(key):
+        v = get(key)
+        if v is None:
+            return None
+        return int(v)
+
+    def get_num_mp3(key):
+        v = get_mp3(key)
+        if v is None:
+            return None
+        return int(v.split('/', 1)[0])
+
+    def get_num_mp4(key):
+        v = get(key)
+        if v is None:
+            return None
+        return v[0]
+
+    if isinstance(f, mutagen.flac.FLAC) or isinstance(f, mutagen.oggvorbis.OggVorbis):
+        artist = get('artist')
+        album_artist = get('albumartist')
+        album = get('album')
+        disc_num = get_num('discnumber')
+        track_num = get_num('tracknumber')
+        title = get('title')
+        if isinstance(f, mutagen.flac.FLAC):
+            ideal_ext = '.flac'
+        else:
+            ideal_ext = '.ogg'
+    elif isinstance(f, mutagen.mp3.MP3):
+        artist = get_mp3('TPE1')
+        album_artist = get_mp3('TPE2')
+        album = get_mp3('TALB')
+        disc_num = get_num_mp3('TPOS')
+        track_num = get_num_mp3('TRCK')
+        title = get_mp3('TIT2')
+        ideal_ext = '.mp3'
+    elif isinstance(f, mutagen.mp4.MP4):
+        artist = get('©ART')
+        album_artist = get('aART')
+        album = get('©alb')
+        disc_num = get_num_mp4('disk')
+        track_num = get_num_mp4('trkn')
+        title = get('©nam')
+        ideal_ext = '.m4a'
+    else:
+        assert False
+
+    if album_artist is None:
+        album_artist = artist
+
+    assert album_artist is not None
+    assert album is not None
+    assert track_num is not None
+    assert title is not None
+
+    num = f'{track_num:02}'
+    if disc_num is not None:
+        num = f'{disc_num}.{num}'
+
+    def r(s):
+        return s.replace('/', '-')
+    return os.path.join(root, r(album_artist), r(album), num + ' ' + r(title) + ideal_ext)
+
+def raw_renames(root, dir):
+    for subdir, rel_dirs, rel_filenames in os.walk(dir):
+        common_ideal_dir = None
+        other_rel_filenames = []
+        for rel_filename in rel_filenames:
+            filename = os.path.join(subdir, rel_filename)
+            f = mutagen.File(filename)
+            if f is None:
+                other_rel_filenames.append(rel_filename)
+            else:
+                ideal_filename = get_ideal_filename(root, f)
+                yield filename, ideal_filename
+                ideal_dir = os.path.dirname(ideal_filename)
+                if common_ideal_dir is None:
+                    common_ideal_dir = ideal_dir
+                elif (common_ideal_dir is not False) and (common_ideal_dir != ideal_dir):
+                    common_ideal_dir = False
+
+        if (common_ideal_dir is not None) and other_rel_filenames:
+            assert common_ideal_dir is not False
+            for rel_filename in other_rel_filenames:
+                yield os.path.join(subdir, rel_filename), os.path.join(common_ideal_dir, rel_filename)
+
+def clean_renames(renames):
+    for rel_old, rel_new in renames:
+        old = os.path.abspath(rel_old)
+        new = os.path.abspath(rel_new)
+        if old != new:
+            yield old, new
+
+def remove_empty_ancestors(path):
+    while True:
+        path = os.path.dirname(path)
+        try:
+            os.rmdir(path)
+        except OSError as e:
+            if e.errno == errno.ENOTEMPTY:
+                break
+            raise
+
+def perform_rename(old, new):
+    os.makedirs(os.path.dirname(new), exist_ok=True)
+    assert not os.path.lexists(new)
+    os.rename(old, new)
+    remove_empty_ancestors(old)
+
+@click.command()
+@click.argument('root')
+@click.argument('dir', required=False)
+@click.option('--dry-run/--no-dry-run', default=True)
+def main(root, dir, dry_run):
+    if dir is None:
+        dir = root
+
+    renames = list(clean_renames(raw_renames(root, dir)))
+
+    for old, new in renames:
+        print(f'"{old}" ==> "{new}"')
+        if not dry_run:
+            perform_rename(old, new)
+
+main()
