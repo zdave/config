@@ -9,7 +9,7 @@ def fish_set(k, v):
     if v is None:
         print('set -e %s;' % k)
     else:
-        if k == 'PATH':
+        if k.endswith('PATH'):
             vs = v.split(':') if v else []
         else:
             vs = [v]
