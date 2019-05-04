@@ -9,7 +9,7 @@ function fish_prompt
     printf '%s ' (date '+%H:%M')
 
     set_color $fish_color_host
-    printf '%s ' (hostname)
+    printf '%s ' $hostname
 
     set_color $fish_color_cwd
     printf '%s' (pwd-collapse-home)
