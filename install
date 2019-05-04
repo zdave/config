@@ -3,7 +3,7 @@
 set exit_status 0
 
 function mk-link -a link -a target
-    mkdir -p (dirname -- $link)
+    mkdir -p -- (dirname -- $link)
     if not set -l current (readlink -- $link); or test $current != $target
         if not ln -sT -- $target $link
             set exit_status 1
@@ -11,7 +11,7 @@ function mk-link -a link -a target
     end
 end
 
-set dir (dirname (readlink -e (status filename)))
+set dir (dirname -- (readlink -e -- (status filename)))
 
 function mk-plain-link -a path
     mk-link ~/$path $dir/$path
