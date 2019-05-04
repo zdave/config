@@ -151,6 +151,7 @@ imap <c-right> <esc><c-right>
 nmap <c-s> i<c-s>
 inoremap <c-s>p #!/usr/bin/env python3<cr>
 inoremap <c-s>b #!/usr/bin/env bash<cr>
+inoremap <c-s>f #!/usr/bin/env fish<cr>
 augroup filetype_snippet_mappings
     autocmd!
     autocmd FileType c,cpp inoremap <buffer> <c-s>i #include ""<left>
