@@ -11,7 +11,7 @@ function mk-link -a link -a target
     end
 end
 
-set dir (dirname (readlink -e (status current-filename)))
+set dir (dirname (readlink -e (status filename)))
 
 function mk-plain-link -a path
     mk-link ~/$path $dir/$path

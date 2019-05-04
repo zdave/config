@@ -1,10 +1,10 @@
-if status --is-login
+if status is-login
     umask 022
     set -x PATH ~/bin $PATH # Bootstrapping...
     bash-source ~/.profile-env
 end
 
-if status --is-interactive
+if status is-interactive
     set fish_greeting
 
     set fish_color_error -o red
