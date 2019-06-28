@@ -40,6 +40,10 @@ set wildmode=longest:full
 
 let g:syntastic_python_python_exec = "python3"
 
+let g:CommandTMaxFiles = 200000
+let g:CommandTFileScanner = "git"
+let g:CommandTTraverseSCM = "dir"
+
 "" Auto commands
 
 function! s:MaybeStripTrailingWhitespace()
@@ -158,3 +162,5 @@ augroup filetype_snippet_mappings
     autocmd FileType c,cpp inoremap <buffer> <c-s>s #include <><left>
     autocmd FileType c,cpp inoremap <buffer> <c-s>m int main(int argc, char **argv)<cr>{<cr><cr>}<up><tab>
 augroup end
+
+nnoremap <c-p> :CommandT<cr>
