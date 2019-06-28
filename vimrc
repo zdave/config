@@ -151,6 +151,10 @@ imap <c-down> <esc><c-down>
 imap <c-left> <esc><c-left>
 imap <c-right> <esc><c-right>
 
+" Window resizing
+nnoremap + 3<c-w>+
+nnoremap - 3<c-w>-
+
 " Snippets
 nmap <c-s> i<c-s>
 inoremap <c-s>p #!/usr/bin/env python3<cr>
