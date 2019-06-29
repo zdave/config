@@ -153,7 +153,7 @@ imap <c-right> <esc><c-right>
 
 " Window resizing
 nnoremap + 3<c-w>+
-nnoremap - 3<c-w>-
+nnoremap _ 3<c-w>-
 
 " Snippets
 nmap <c-s> i<c-s>
