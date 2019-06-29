@@ -47,7 +47,7 @@ let g:CommandTTraverseSCM = "dir"
 "" Auto commands
 
 function! s:MaybeStripTrailingWhitespace()
-    if &filetype == "diff"
+    if exists("b:strip_trailing_whitespace") && !b:strip_trailing_whitespace
         return
     endif
     let l = line(".")
@@ -57,8 +57,14 @@ function! s:MaybeStripTrailingWhitespace()
 endfunction
 augroup pre_write_maybe_strip_trailing_whitespace
     autocmd!
+    autocmd FileType diff DisableStripTrailingWhitespace
     autocmd BufWritePre * call <sid>MaybeStripTrailingWhitespace()
 augroup end
+
+"" Commands
+
+command! EnableStripTrailingWhitespace :let b:strip_trailing_whitespace = 1
+command! DisableStripTrailingWhitespace :let b:strip_trailing_whitespace = 0
 
 "" Leader mappings
 
