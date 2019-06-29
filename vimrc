@@ -157,6 +157,7 @@ nnoremap - 3<c-w>-
 
 " Snippets
 nmap <c-s> i<c-s>
+inoremap <c-s>h #!/bin/sh<cr>
 inoremap <c-s>p #!/usr/bin/env python3<cr>
 inoremap <c-s>b #!/usr/bin/env bash<cr>
 inoremap <c-s>f #!/usr/bin/env fish<cr>
