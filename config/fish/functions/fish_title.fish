@@ -1,3 +1,4 @@
 function fish_title
-    printf '%s %s %s' $hostname (pwd-collapse-home) $argv[1]
+    printf '%s' $hostname
+    printf ' %s' (pwd-collapse-home) $argv[1]
 end
