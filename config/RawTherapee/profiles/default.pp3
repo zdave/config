@@ -8,12 +8,12 @@ ColorLabel=0
 InTrash=false
 
 [Exposure]
-Auto=false
+Auto=true
 Clip=0.02
 Compensation=0
 Brightness=0
 Contrast=0
-Saturation=0
+Saturation=10
 Black=0
 HighlightCompr=0
 HighlightComprThreshold=0
@@ -21,9 +21,9 @@ ShadowCompr=50
 HistogramMatching=false
 CurveFromHistogramMatching=false
 ClampOOG=true
-CurveMode=FilmLike
+CurveMode=Standard
 CurveMode2=Standard
-Curve=1;0;0;0.11;0.089999999999999997;0.32000000000000001;0.42999999999999999;0.66000000000000003;0.87;1;1;
+Curve=1;0;0;1;1;
 Curve2=0;
 
 [HLRecovery]
@@ -66,7 +66,7 @@ GainTransmissionCurve=1;0;0.10000000000000001;0.34999999999999998;0;0.25;0.25;0.
 [Local Contrast]
 Enabled=false
 Radius=80
-Amount=0.20000000000000001
+Amount=0.10000000000000001
 Darkness=1
 Lightness=1
 
@@ -120,7 +120,7 @@ LcCurve=0;
 ClCurve=0;
 
 [Sharpening]
-Enabled=false
+Enabled=true
 Contrast=20
 Method=usm
 Radius=0.5
@@ -221,7 +221,7 @@ HueCurve=1;0.16666666699999999;0;0.34999999999999998;0.34999999999999998;0.34699
 
 [Dehaze]
 Enabled=false
-Strength=50
+Strength=20
 ShowDepthMap=false
 Depth=25
 
@@ -249,7 +249,7 @@ CCCurve=1;0.050000000000000003;0.5;0.34999999999999998;0.34999999999999998;0.349
 
 [EPD]
 Enabled=false
-Strength=0.5
+Strength=0.14999999999999999
 Gamma=1
 EdgeStopping=1.3999999999999999
 Scale=1
@@ -279,7 +279,7 @@ H=15000
 FixedRatio=true
 Ratio=As Image
 Orientation=As Image
-Guide=Frame
+Guide=Rule of thirds
 
 [Coarse Transformation]
 Rotate=0
@@ -299,7 +299,7 @@ Amount=0
 LcMode=lfauto
 LCPFile=
 UseDistortion=true
-UseVignette=true
+UseVignette=false
 UseCA=false
 LFCameraMake=
 LFCameraModel=
@@ -319,7 +319,7 @@ CenterY=0
 
 [PCVignette]
 Enabled=false
-Strength=0.59999999999999998
+Strength=1
 Feather=50
 Roundness=50
 
@@ -335,17 +335,17 @@ CenterX=0
 CenterY=0
 
 [Resize]
-Enabled=false
+Enabled=true
 Scale=1
 AppliesTo=Cropped area
 Method=Lanczos
 DataSpecified=3
-Width=900
-Height=900
+Width=3840
+Height=2560
 AllowUpscaling=false
 
 [PostResizeSharpening]
-Enabled=false
+Enabled=true
 Contrast=15
 Method=rld
 Radius=0.5
@@ -364,7 +364,7 @@ DeconvIterations=100
 [Color Management]
 InputProfile=(cameraICC)
 ToneCurve=false
-ApplyLookTable=true
+ApplyLookTable=false
 ApplyBaselineExposureOffset=true
 ApplyHueSatMap=true
 DCPIlluminant=0
