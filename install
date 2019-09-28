@@ -38,6 +38,7 @@ if test (hostname -f) = zort.sp4m.net
 end
 
 mk-dot-link Xresources
+mk-dot-link config/RawTherapee/profiles/default.pp3
 mk-dot-link config/fish
 mk-dot-link config/fontconfig
 mk-dot-link gitconfig
