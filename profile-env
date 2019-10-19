@@ -1,4 +1,4 @@
-export PATH="$(python3 - ~/bin ~/.cabal/bin ~/.cargo/bin ~/go/bin <<EOF
+export PATH="$(python3 - ~/bin ~/.ghcup/bin ~/.cabal/bin ~/.cargo/bin ~/go/bin <<EOF
 import collections, os, sys
 print(':'.join(collections.OrderedDict.fromkeys(
     [dir for dir in sys.argv[1:] if os.path.isdir(dir)] +
