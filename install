@@ -30,6 +30,7 @@ mk-plain-link bin/env-dump
 mk-plain-link bin/org-music
 mk-plain-link bin/rgit
 mk-plain-link bin/rre
+mk-plain-link bin/wallpaper
 mk-plain-link bin/xrandr-normal
 if test (hostname -f) = zort.sp4m.net
     mk-plain-link bin/headphones
