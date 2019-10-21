@@ -57,6 +57,10 @@ mk-dot-link vim
 mk-dot-link vimrc
 mk-dot-link zcash/zcash.conf
 
+if test -d ~/Dropbox/wallpapers
+    mk-link ~/wallpapers ~/Dropbox/wallpapers
+end
+
 # Always want pulseaudio running, not just when something tries to connect
 if type -q systemctl; and test (count (systemctl --user --no-legend list-unit-files pulseaudio.service)) -ne 0
     systemctl --user --quiet enable pulseaudio.service
