@@ -120,7 +120,7 @@ LcCurve=0;
 ClCurve=0;
 
 [Sharpening]
-Enabled=true
+Enabled=false
 Contrast=20
 Method=usm
 Radius=0.5
@@ -347,7 +347,7 @@ Height=2560
 AllowUpscaling=false
 
 [PostDemosaicSharpening]
-Enabled=false
+Enabled=true
 Contrast=6
 AutoContrast=true
 AutoRadius=true
