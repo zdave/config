@@ -1,5 +1,5 @@
 [Version]
-AppVersion=5.6
+AppVersion=5.8
 Version=346
 
 [General]
@@ -224,6 +224,7 @@ Enabled=false
 Strength=20
 ShowDepthMap=false
 Depth=25
+Luminance=false
 
 [Directional Pyramid Denoising]
 Enabled=false
@@ -287,6 +288,7 @@ HorizontalFlip=false
 VerticalFlip=false
 
 [Common Properties for Transformations]
+Method=lin
 AutoFill=true
 
 [Rotation]
@@ -343,6 +345,16 @@ DataSpecified=3
 Width=3840
 Height=2560
 AllowUpscaling=false
+
+[PostDemosaicSharpening]
+Enabled=false
+Contrast=6
+AutoContrast=true
+AutoRadius=true
+DeconvRadius=1.1000000000000001
+DeconvRadiusOffset=0
+DeconvIterCheck=true
+DeconvIterations=20
 
 [PostResizeSharpening]
 Enabled=true
@@ -622,3 +634,9 @@ PreBlackBlue=0
 
 [MetaData]
 Mode=0
+
+[Film Negative]
+Enabled=false
+RedRatio=1.3600000000000001
+GreenExponent=1.5
+BlueRatio=0.85999999999999999
