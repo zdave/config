@@ -58,7 +58,7 @@ endfunction
 augroup pre_write_maybe_strip_trailing_whitespace
     autocmd!
     autocmd FileType diff DisableStripTrailingWhitespace
-    autocmd BufWritePre * call <sid>MaybeStripTrailingWhitespace()
+    autocmd BufWritePre * call <SID>MaybeStripTrailingWhitespace()
 augroup end
 
 "" Commands
@@ -68,18 +68,18 @@ command! DisableStripTrailingWhitespace :let b:strip_trailing_whitespace = 0
 
 "" Leader mappings
 
-nnoremap <space> <nop>
+nnoremap <Space> <Nop>
 let g:mapleader = " "
 
-nnoremap <leader>t :checktime<cr>
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>b :bw<cr>
+nnoremap <Leader>t :checktime<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>b :bw<CR>
 
-nnoremap <leader>c :cd %:p:h<cr>
-nnoremap <leader>g :Gcd<cr>
+nnoremap <Leader>c :cd %:p:h<CR>
+nnoremap <Leader>g :Gcd<CR>
 
-nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <Leader>/ :nohlsearch<CR>
 
 function! s:Split()
     let num = v:count1
@@ -88,7 +88,7 @@ function! s:Split()
         let num -= 1
     endwhile
 endfunction
-nnoremap <leader>s :<c-u>call <sid>Split()<cr>
+nnoremap <Leader>s :<C-U>call <SID>Split()<CR>
 
 function! s:Vsplit()
     let num = v:count1
@@ -97,7 +97,7 @@ function! s:Vsplit()
         let num -= 1
     endwhile
 endfunction
-nnoremap <leader>a :<c-u>call <sid>Vsplit()<cr>
+nnoremap <Leader>a :<C-U>call <SID>Vsplit()<CR>
 
 function! s:RegenCtags()
     let t = findfile("tags", ".;")
@@ -116,11 +116,11 @@ function! s:RegenCtags()
 
     execute "!cd" shellescape(d) "&& ctags -R --languages=c,c++ --extra=+qf --c-kinds=+p --c++-kinds=+p --fields=+S"
 endfunction
-nnoremap <leader>r :call <sid>RegenCtags()<cr>
+nnoremap <Leader>r :call <SID>RegenCtags()<CR>
 
 "" Regular mappings
 
-nnoremap <enter> o
+nnoremap <Enter> o
 
 " Don't exit visual mode after shifting
 xnoremap < <gv
@@ -142,36 +142,36 @@ onoremap # *
 onoremap ~ #
 
 " Easier line select
-nnoremap <s-up> V<up>
-nnoremap <s-down> V<down>
-vnoremap <s-up> <up>
-vnoremap <s-down> <down>
+nnoremap <S-Up> V<Up>
+nnoremap <S-Down> V<Down>
+vnoremap <S-Up> <Up>
+vnoremap <S-Down> <Down>
 
 " Quick window switching
-nnoremap <c-up> <c-w><up>
-nnoremap <c-down> <c-w><down>
-nnoremap <c-left> <c-w><left>
-nnoremap <c-right> <c-w><right>
-imap <c-up> <esc><c-up>
-imap <c-down> <esc><c-down>
-imap <c-left> <esc><c-left>
-imap <c-right> <esc><c-right>
+nnoremap <C-Up> <C-W><Up>
+nnoremap <C-Down> <C-W><Down>
+nnoremap <C-Left> <C-W><Left>
+nnoremap <C-Right> <C-W><Right>
+imap <C-Up> <Esc><C-Up>
+imap <C-Down> <Esc><C-Down>
+imap <C-Left> <Esc><C-Left>
+imap <C-Right> <Esc><C-Right>
 
 " Window resizing
-nnoremap + 3<c-w>+
-nnoremap _ 3<c-w>-
+nnoremap + 3<C-W>+
+nnoremap _ 3<C-W>-
 
 " Snippets
-nmap <c-s> i<c-s>
-inoremap <c-s>h #!/bin/sh<cr>
-inoremap <c-s>p #!/usr/bin/env python3<cr>
-inoremap <c-s>b #!/usr/bin/env bash<cr>
-inoremap <c-s>f #!/usr/bin/env fish<cr>
+nmap <C-S> i<C-S>
+inoremap <C-S>h #!/bin/sh<CR>
+inoremap <C-S>p #!/usr/bin/env python3<CR>
+inoremap <C-S>b #!/usr/bin/env bash<CR>
+inoremap <C-S>f #!/usr/bin/env fish<CR>
 augroup filetype_snippet_mappings
     autocmd!
-    autocmd FileType c,cpp inoremap <buffer> <c-s>i #include ""<left>
-    autocmd FileType c,cpp inoremap <buffer> <c-s>s #include <><left>
-    autocmd FileType c,cpp inoremap <buffer> <c-s>m int main(int argc, char **argv)<cr>{<cr><cr>}<up><tab>
+    autocmd FileType c,cpp inoremap <buffer> <C-S>i #include ""<Left>
+    autocmd FileType c,cpp inoremap <buffer> <C-S>s #include <><Left>
+    autocmd FileType c,cpp inoremap <buffer> <C-S>m int main(int argc, char **argv)<CR>{<CR><CR>}<Up><Tab>
 augroup end
 
-nnoremap <c-p> :CommandT<cr>
+nnoremap <C-P> :CommandT<CR>
