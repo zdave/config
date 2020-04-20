@@ -161,6 +161,16 @@ imap <C-Down> <Esc><C-Down>
 imap <C-Left> <Esc><C-Left>
 imap <C-Right> <Esc><C-Right>
 
+" Quick window movement
+nnoremap <A-Up> <C-W>K
+nnoremap <A-Down> <C-W>J
+nnoremap <A-Left> <C-W>H
+nnoremap <A-Right> <C-W>L
+inoremap <A-Up> <C-O><C-W>K
+inoremap <A-Down> <C-O><C-W>J
+inoremap <A-Left> <C-O><C-W>H
+inoremap <A-Right> <C-O><C-W>L
+
 " Window resizing
 nnoremap + 3<C-W>+
 nnoremap _ 3<C-W>-
