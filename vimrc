@@ -43,6 +43,10 @@ let g:syntastic_python_python_exec = "python3"
 let g:CommandTMaxFiles = 200000
 let g:CommandTFileScanner = "git"
 let g:CommandTTraverseSCM = "dir"
+if !has("gui_running")
+   " Default includes <Esc>, which doesn't work properly
+   let g:CommandTCancelMap = "<C-C>"
+endif
 
 "" Auto commands
 
