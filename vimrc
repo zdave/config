@@ -175,3 +175,13 @@ augroup filetype_snippet_mappings
 augroup end
 
 nnoremap <C-P> :CommandT<CR>
+
+"" Terminal key codes
+
+if &term =~ "^alacritty"
+    set <DecMouse>= " \e[ by default
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
