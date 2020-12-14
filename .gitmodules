@@ -49,3 +49,18 @@
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = https://github.com/wincent/command-t.git
+[submodule "vim/bundle/SameSyntaxMotion"]
+	path = vim/bundle/SameSyntaxMotion
+	url = https://github.com/inkarkat/vim-SameSyntaxMotion.git
+[submodule "vim/bundle/ingo-library"]
+	path = vim/bundle/ingo-library
+	url = https://github.com/inkarkat/vim-ingo-library
+[submodule "vim/bundle/CountJump"]
+	path = vim/bundle/CountJump
+	url = https://github.com/inkarkat/vim-CountJump.git
+[submodule "vim/bundle/todo.txt"]
+	path = vim/bundle/todo.txt
+	url = https://github.com/freitass/todo.txt-vim.git
+[submodule "vim/bundle/ledger"]
+	path = vim/bundle/ledger
+	url = https://github.com/ledger/vim-ledger.git
