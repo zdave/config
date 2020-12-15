@@ -1,0 +1,46 @@
+scrolling:
+  history: 20000
+
+font:
+  normal:
+    family: Consolas
+  size: 10.5
+
+colors:
+  primary:
+    foreground: '#d0d0d0'
+    background: '#000000'
+
+  normal:
+    black:   '#000000'
+    red:     '#d80036'
+    green:   '#00c322'
+    yellow:  '#a68d00'
+    blue:    '#2862e8'
+    magenta: '#cd0074'
+    cyan:    '#00a287'
+    white:   '#d0d0d0'
+
+  bright:
+    black:   '#555555'
+    red:     '#f93e58'
+    green:   '#9bed00'
+    yellow:  '#ffd900'
+    blue:    '#6c8dd5'
+    magenta: '#e83a93'
+    cyan:    '#5ed0bd'
+    white:   '#ffffff'
+
+bell:
+  duration: 60
+
+selection:
+  save_to_clipboard: true
+
+mouse:
+  url:
+    modifiers: Control
+
+mouse_bindings:
+  - mouse: 8 # "Back" button
+    action: Paste
