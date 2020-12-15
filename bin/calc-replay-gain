@@ -8,7 +8,7 @@ if [ $# -ge 1 ]; then
 fi
 
 dirs-for() {
-    find -name "*.$1" -print0 | xargs -0r dirname -z | sort -z | uniq -z
+    find . -name "*.$1" -print0 | xargs -0r dirname -z | sort -z | uniq -z
 }
 
 per-dir() {
