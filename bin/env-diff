@@ -3,17 +3,18 @@
 import argparse
 import json
 import os
-import pipes
+import shlex
 
 def fish_set(k, v):
     if v is None:
-        print('set -e %s;' % k)
+        print('set -e %s' % shlex.quote(k))
     else:
         if k.endswith('PATH'):
             vs = v.split(':') if v else []
         else:
             vs = [v]
-        print('set -gx %s %s;' % (k, ' '.join(pipes.quote(v) for v in vs)))
+        print('set -gx %s %s' % (shlex.quote(k),
+            ' '.join(shlex.quote(v) for v in vs)))
 
 def diff(before, after, set_fn):
     for k in set(before) - set(after):
