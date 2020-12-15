@@ -1,3 +1,3 @@
 function bash-source
-    eval (bash-source-env-diff fish $argv)
+    bash-source-env-diff fish $argv | source
 end
