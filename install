@@ -39,10 +39,10 @@ if test (hostname -f) = zort.sp4m.net
 end
 
 if set x_terminal_emulator ( \
-      which alacritty 2>/dev/null; or \
-      which urxvt 2>/dev/null; or \
-      which xterm 2>/dev/null)
-   mk-link ~/bin/x-terminal-emulator $x_terminal_emulator
+        which alacritty 2>/dev/null; or \
+        which urxvt 2>/dev/null; or \
+        which xterm 2>/dev/null)
+    mk-link ~/bin/x-terminal-emulator $x_terminal_emulator
 end
 
 mk-dot-link Xresources
