@@ -19,10 +19,10 @@ function fish_prompt
     set_color $fish_color_cwd
     printf '%s' (pwd-collapse-home)
 
-    set -l git_sha (git rev-parse --short HEAD ^/dev/null)
+    set -l git_sha (git rev-parse --short HEAD 2>/dev/null)
     if test $status -eq 0
         set_color -o brgreen
-        set -l git_branch (git symbolic-ref --short HEAD ^/dev/null)
+        set -l git_branch (git symbolic-ref --short HEAD 2>/dev/null)
         if test $status -eq 0
             printf ' %s' $git_branch
         else
