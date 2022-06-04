@@ -1,4 +1,0 @@
-#!/bin/sh
-if [ "$(hostname -f)" = zort.sp4m.net ]; then
-    exec xrandr --dpi 144 --output DP-4 --auto --primary --output DP-2 --auto --right-of DP-4 --output HDMI-0 --off
-fi
