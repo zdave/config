@@ -1,6 +1,3 @@
-Match host *.broadcom.com,*.broadcom.net,v3d-* exec "which brcm-vpn-nc"
-    ProxyCommand setsid brcm-vpn-nc %h %p
-
 Host *
     AddKeysToAgent yes
     ControlMaster auto
