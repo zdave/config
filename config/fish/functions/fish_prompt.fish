@@ -9,7 +9,7 @@ function fish_prompt
     printf '%s ' (date '+%H:%M')
 
     set_color $fish_color_host
-    printf '%s ' $hostname
+    printf '%s ' (shorten-hostname $hostname)
 
     if test $SHLVL -gt 1
         set_color -o brcyan
