@@ -14,7 +14,7 @@ if status is-interactive
     set fish_color_comment brblack
     set fish_color_search_match --background=brblack
     set fish_color_operator -o bryellow
-    set fish_color_escape -o brmagenta
+    set fish_color_escape brmagenta
     set fish_color_quote normal
     set fish_color_redirection green
     set fish_color_autosuggestion brblack
