@@ -2,21 +2,17 @@
 	name = David Emett
 	email = dave@sp4m.net
 [core]
-	excludesfile = ~/.gitignore-global
+	excludesFile = ~/.gitignore-global
 [merge]
-	conflictstyle = diff3
-[mergetool]
-	prompt = false
+	conflictStyle = zdiff3
 [diff]
-	algorithm = patience
-[difftool]
-	prompt = false
+	algorithm = histogram
 [rebase]
-	autostash = true
+	autoStash = true
 [pull]
 	rebase = true
 [push]
 	default = upstream
 [alias]
 	bdate = for-each-ref --sort=committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(end)%(refname:short)%(color:reset)' refs/heads
-	wd = diff --color-words='[A-Z]+[a-z]*|[a-z]+|[0-9]+|[^[:space:]]'
+	wd = diff --word-diff=color
