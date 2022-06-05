@@ -44,24 +44,35 @@ def best_wallpaper_size_for(wallpaper_sizes, screen_size):
         return (ratio_score(*wallpaper_size, *screen_size), size_score(*wallpaper_size))
     return max(wallpaper_sizes, key=score)
 
-def feh_args(root, wallpapers_by_size):
+def feh_args(screen_sizes, wallpapers_by_size):
     yield '--bg-max'
     yield '--no-fehbg'
     yield '--'
 
-    for i in range(root.xinerama_get_screen_count().screen_count):
-        screen_size = root.xinerama_get_screen_size(i)
+    for screen_size in screen_sizes:
         wallpaper_size = best_wallpaper_size_for(
             wallpapers_by_size, (screen_size.width, screen_size.height))
         yield random.choice(wallpapers_by_size[wallpaper_size])
 
 def update(root):
-    wallpapers_by_size = dict(get_wallpapers_by_size())
-    assert wallpapers_by_size, 'No wallpapers!'
+    screen_sizes = [root.xinerama_get_screen_size(i)
+        for i in range(root.xinerama_get_screen_count().screen_count)]
+    if not screen_sizes:
+        return
 
-    cmd = ['feh'] + list(feh_args(root, wallpapers_by_size))
+    wallpapers_by_size = dict(get_wallpapers_by_size())
+    if not wallpapers_by_size:
+        raise Exception('No wallpapers!')
+
+    cmd = ['feh'] + list(feh_args(screen_sizes, wallpapers_by_size))
     print(' '.join(shlex.quote(arg) for arg in cmd), file=sys.stderr, flush=True)
     subprocess.run(cmd, check=True)
+
+def try_update(root):
+    try:
+        update(root)
+    except Exception as e:
+        print(e, file=sys.stderr, flush=True)
 
 def main():
     display = Xlib.display.Display()
@@ -72,10 +83,10 @@ def main():
     root = screen.root
 
     root.xrandr_select_input(Xlib.ext.randr.RRCrtcChangeNotifyMask)
-    update(root)
+    try_update(root)
     while True:
         e = display.next_event()
         if e.__class__.__name__ == Xlib.ext.randr.CrtcChangeNotify.__name__:
-            update(root)
+            try_update(root)
 
 main()
