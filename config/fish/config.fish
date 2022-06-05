@@ -28,4 +28,11 @@ if status is-interactive
 
     set fish_color_host -o brblue
     set fish_color_cwd -o bryellow
+
+    abbr --add -g a git add
+    abbr --add -g ap git add --patch
+    abbr --add -g d git diff
+    abbr --add -g ds git diff --staged
+    abbr --add -g l git log
+    abbr --add -g s git status
 end
