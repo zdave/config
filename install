@@ -28,6 +28,9 @@ mk-plain-link bin/calc-replay-gain
 if test -x /usr/bin/discord
     mk-plain-link bin/discord
 end
+if test -x /usr/bin/element-desktop
+    mk-plain-link bin/element-desktop
+end
 mk-plain-link bin/env-diff
 mk-plain-link bin/env-dump
 mk-plain-link bin/org-music
