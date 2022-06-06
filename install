@@ -45,9 +45,11 @@ mk-dot-link config/RawTherapee/profiles/default.pp3
 mk-dot-link config/bat
 mk-dot-link config/fish
 mk-dot-link config/fontconfig
+mk-dot-link config/gtk-3.0/settings.ini
 mk-dot-link gitconfig
 mk-dot-link gitignore-global
 mk-dot-link gmail-smtp-password.gpg
+mk-dot-link gtkrc-2.0
 mk-dot-link msmtprc
 mk-dot-link parallel/will-cite
 mk-dot-link profile
