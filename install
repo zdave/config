@@ -45,7 +45,6 @@ mk-dot-link config/RawTherapee/profiles/default.pp3
 mk-dot-link config/bat
 mk-dot-link config/chrome-flags.conf
 mk-dot-link config/fish
-mk-dot-link config/fontconfig
 mk-dot-link config/gtk-3.0/settings.ini
 mk-dot-link gitconfig
 mk-dot-link gitignore-global
