@@ -1,0 +1,7 @@
+#!/bin/sh
+exec /usr/bin/spotify \
+    --force-device-scale-factor="$(xdpyinfo | awk 'match($0, /resolution:\s+([0-9]+)x/, m) { print m[1] / 96; exit }')" \
+    --disable-smooth-scrolling \
+    --enable-gpu-rasterization \
+    --enable-zero-copy \
+    "$@"

@@ -30,6 +30,9 @@ mk-plain-link bin/env-dump
 mk-plain-link bin/org-music
 mk-plain-link bin/rgit
 mk-plain-link bin/rre
+if test -x /usr/bin/spotify
+    mk-plain-link bin/spotify
+end
 mk-plain-link bin/wallpaper
 
 if set x_terminal_emulator ( \
