@@ -25,6 +25,9 @@ mkdir -p ~/.ssh/master
 
 mk-plain-link bin/bash-source-env-diff
 mk-plain-link bin/calc-replay-gain
+if test -x /usr/bin/discord
+    mk-plain-link bin/discord
+end
 mk-plain-link bin/env-diff
 mk-plain-link bin/env-dump
 mk-plain-link bin/org-music
