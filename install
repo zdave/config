@@ -62,9 +62,9 @@ mk-dot-link config/git/ignore-global
 mk-dot-link config/gtk-3.0/settings.ini
 mk-dot-link config/mimeapps.list
 mk-dot-link config/msmtp/config
+mk-dot-link config/msmtp/gmail-password.gpg
 mk-dot-link config/picom/picom.conf
 mk-dot-link config/zathura/zathurarc
-mk-dot-link gmail-smtp-password.gpg
 mk-dot-link gnupg/gpg-agent.conf
 mk-dot-link gnupg/scdaemon.conf
 mk-dot-link gtkrc-2.0
