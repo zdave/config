@@ -39,7 +39,9 @@ mk-plain-link bin/rre
 if test -x /usr/bin/spotify
     mk-plain-link bin/spotify
 end
-mk-plain-link bin/wallpaper
+if type -fq feh
+    mk-plain-link bin/wallpaper
+end
 
 if set x_terminal_emulator ( \
         which alacritty 2>/dev/null; or \
