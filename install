@@ -62,6 +62,7 @@ mk-dot-link gitconfig
 mk-dot-link gitignore-global
 mk-dot-link gmail-smtp-password.gpg
 mk-dot-link gnupg/gpg-agent.conf
+mk-dot-link gnupg/scdaemon.conf
 mk-dot-link gtkrc-2.0
 mk-dot-link msmtprc
 mk-dot-link parallel/will-cite
