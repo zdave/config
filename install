@@ -58,11 +58,11 @@ mk-dot-link config/chrome-flags.conf
 mk-dot-link config/fish
 mk-dot-link config/fontconfig
 mk-dot-link config/git/config
+mk-dot-link config/git/ignore-global
 mk-dot-link config/gtk-3.0/settings.ini
 mk-dot-link config/mimeapps.list
 mk-dot-link config/picom/picom.conf
 mk-dot-link config/zathura/zathurarc
-mk-dot-link gitignore-global
 mk-dot-link gmail-smtp-password.gpg
 mk-dot-link gnupg/gpg-agent.conf
 mk-dot-link gnupg/scdaemon.conf

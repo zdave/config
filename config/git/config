@@ -3,7 +3,7 @@
 	email = dave@sp4m.net
 	signingKey = 48D0382278698E86134BA5E697B5FA85C4CD069F
 [core]
-	excludesFile = ~/.gitignore-global
+	excludesFile = ~/.config/git/ignore-global
 [merge]
 	conflictStyle = zdiff3
 [diff]
