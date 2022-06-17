@@ -7,4 +7,4 @@ EOF
 )"
 
 export EDITOR=vim
-export PYTHONSTARTUP=~/.python-startup.py
+export PYTHONSTARTUP=~/.config/python/startup.py
