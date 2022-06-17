@@ -1,2 +1,2 @@
 umask 022
-source ~/.profile-env
+source ~/.config/profile-env

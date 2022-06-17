@@ -1,7 +1,7 @@
 if status is-login
     umask 022
     set -x PATH ~/bin $PATH # Bootstrapping...
-    bash-source ~/.profile-env
+    bash-source ~/.config/profile-env
 end
 
 if status is-interactive

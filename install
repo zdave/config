@@ -64,6 +64,7 @@ mk-dot-link config/mimeapps.list
 mk-dot-link config/msmtp/config
 mk-dot-link config/msmtp/gmail-password.gpg
 mk-dot-link config/picom/picom.conf
+mk-dot-link config/profile-env
 mk-dot-link config/zathura/zathurarc
 mk-dot-link gnupg/gpg-agent.conf
 mk-dot-link gnupg/scdaemon.conf
@@ -71,7 +72,6 @@ mk-dot-link gtkrc-2.0
 mk-dot-link mailrc
 mk-dot-link parallel/will-cite
 mk-dot-link profile
-mk-dot-link profile-env
 mk-dot-link python-startup.py
 mk-dot-link ssh/authorized_keys
 mk-dot-link ssh/config
