@@ -2,8 +2,6 @@ scrolling:
   history: 20000
 
 font:
-  normal:
-    family: Consolas
   size: 10.5
 
 colors:

@@ -5,7 +5,7 @@ execute pathogen#infect()
 
 colorscheme dave
 
-set guifont=Consolas\ 11
+set guifont=monospace\ 11
 set guioptions-=a " No autoselect
 set guioptions+=f " Don't fork
 set guioptions-=m " No menu
