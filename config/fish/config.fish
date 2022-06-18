@@ -35,4 +35,6 @@ if status is-interactive
     abbr --add -g ds git diff --staged
     abbr --add -g l git log
     abbr --add -g s git status
+
+    abbr --add -g sus systemctl --user status
 end
