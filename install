@@ -71,6 +71,12 @@ mk-dot-link config/zathura/zathurarc
 mk-dot-link gnupg/gpg-agent.conf
 mk-dot-link gnupg/scdaemon.conf
 mk-dot-link gtkrc-2.0
+if test -x /usr/bin/discord
+    mk-dot-link local/share/applications/discord.desktop
+end
+if test -x /usr/bin/element-desktop
+    mk-dot-link local/share/applications/io.element.Element.desktop
+end
 mk-dot-link mailrc
 mk-dot-link parallel/will-cite
 mk-dot-link profile
