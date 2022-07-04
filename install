@@ -42,6 +42,9 @@ end
 if type -fq feh
     mk-plain-link bin/wallpaper
 end
+if type -fq xsettingsd
+    mk-plain-link bin/xsettingsd-auto-dpi
+end
 
 if set x_terminal_emulator ( \
         which alacritty 2>/dev/null; or \
