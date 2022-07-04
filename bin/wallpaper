@@ -78,9 +78,7 @@ def main():
     display = Xlib.display.Display()
     assert display.has_extension('RANDR')
     assert display.has_extension('XINERAMA')
-
-    screen = display.screen()
-    root = screen.root
+    root = display.screen().root
 
     root.xrandr_select_input(Xlib.ext.randr.RRCrtcChangeNotifyMask)
     try_update(root)
