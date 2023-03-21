@@ -1,4 +1,4 @@
 function fish_title
-    printf '%s' (shorten-hostname $hostname)
+    printf '%s' (prompt_hostname)
     printf ' %s' (pwd-collapse-home) $argv[1]
 end
