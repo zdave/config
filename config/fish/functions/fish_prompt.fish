@@ -2,7 +2,7 @@ function fish_prompt
     set -l s $status
     if test $s -ne 0
         set_color -o brred
-        printf '%s ' $s
+        printf '%s ' (fish_status_to_signal $s)
     end
 
     set_color -o brblack
