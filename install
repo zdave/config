@@ -46,6 +46,8 @@ if type -fq xsettingsd
     mk-plain-link bin/xsettingsd-auto-dpi
 end
 
+mk-link ~/bin/git-reparent $dir/bin/git-reparent/git-reparent
+
 if set x_terminal_emulator ( \
         which alacritty 2>/dev/null; or \
         which urxvt 2>/dev/null; or \

@@ -64,3 +64,6 @@
 [submodule "vim/bundle/ledger"]
 	path = vim/bundle/ledger
 	url = https://github.com/ledger/vim-ledger.git
+[submodule "bin/git-reparent"]
+	path = bin/git-reparent
+	url = https://github.com/MarkLodato/git-reparent.git
