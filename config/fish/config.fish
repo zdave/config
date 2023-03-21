@@ -6,6 +6,7 @@ end
 
 if status is-interactive
     set fish_greeting
+    set fish_prompt_pwd_dir_length 0
 
     set fish_color_error -o brred
     set fish_color_command -o brwhite
