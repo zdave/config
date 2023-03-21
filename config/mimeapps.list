@@ -19,6 +19,7 @@ image/x-portable-pixmap=feh.desktop
 image/x-tga=feh.desktop
 image/x-xbitmap=feh.desktop
 text/html=google-chrome.desktop
+text/plain=gvim.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
