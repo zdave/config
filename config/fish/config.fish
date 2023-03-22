@@ -30,6 +30,13 @@ if status is-interactive
     set fish_color_host -o brblue
     set fish_color_cwd -o bryellow
 
+    if type -fq fd
+        set fish_function_path ~/.config/fish/functions/fd $fish_function_path
+    end
+    if type -fq rg
+        set fish_function_path ~/.config/fish/functions/rg $fish_function_path
+    end
+
     abbr --add -g a git add
     abbr --add -g ap git add --patch
     abbr --add -g d git diff
