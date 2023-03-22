@@ -104,11 +104,15 @@ mk-dot-link xsession
 mk-dot-link zcash/zcash.conf
 
 if type -q dconf
-    dconf load / <$dir/config/dconf/user.txt
+    if not dconf load / <$dir/config/dconf/user.txt
+        set exit_status 1
+    end
 end
 
 if type -q systemctl
-    systemctl --user --quiet enable graphical-apps.target
+    if not systemctl --user --quiet enable graphical-apps.target
+        set exit_status 1
+    end
 end
 
 exit $exit_status
