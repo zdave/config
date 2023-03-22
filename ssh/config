@@ -1,5 +1,5 @@
 Host *
     AddKeysToAgent yes
     ControlMaster auto
-    ControlPath ~/.ssh/master/%C
+    ControlPath ${XDG_RUNTIME_DIR}/ssh-master-%r@%h:%p
     ControlPersist 10s
