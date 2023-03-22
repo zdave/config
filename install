@@ -49,9 +49,9 @@ end
 mk-link ~/bin/git-reparent $dir/bin/git-reparent/git-reparent
 
 if set x_terminal_emulator ( \
-        which alacritty 2>/dev/null; or \
-        which urxvt 2>/dev/null; or \
-        which xterm 2>/dev/null)
+        type -fp alacritty 2>/dev/null; or \
+        type -fp urxvt 2>/dev/null; or \
+        type -fp xterm 2>/dev/null)
     mk-link ~/bin/x-terminal-emulator $x_terminal_emulator
 end
 
