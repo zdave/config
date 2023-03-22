@@ -102,10 +102,6 @@ mk-dot-link vim
 mk-dot-link xsession
 mk-dot-link zcash/zcash.conf
 
-if test -d ~/Dropbox/wallpapers
-    mk-link ~/wallpapers ~/Dropbox/wallpapers
-end
-
 if type -q systemctl
     systemctl --user --quiet enable graphical-apps.target
 end
