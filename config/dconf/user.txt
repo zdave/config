@@ -1,0 +1,3 @@
+[org/mate/notification-daemon]
+theme='coco'
+use-active-monitor=false

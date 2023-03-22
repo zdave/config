@@ -103,6 +103,10 @@ mk-dot-link vim
 mk-dot-link xsession
 mk-dot-link zcash/zcash.conf
 
+if type -q dconf
+    dconf load / <$dir/config/dconf/user.txt
+end
+
 if type -q systemctl
     systemctl --user --quiet enable graphical-apps.target
 end
