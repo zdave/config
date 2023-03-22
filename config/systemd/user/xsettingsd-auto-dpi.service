@@ -1,0 +1,8 @@
+[Unit]
+Description=XSETTINGS daemon with Xft/DPI tracking RandR DPI
+PartOf=graphical-session.target
+After=graphical-session.target
+Before=graphical-apps.target
+
+[Service]
+ExecStart=%h/bin/xsettingsd-auto-dpi

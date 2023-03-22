@@ -1,0 +1,5 @@
+#!/bin/sh
+trap 'systemctl --user stop i3-session.target' TERM
+systemctl --user --wait start i3-session.target &
+wait # Possibly interrupted by SIGTERM
+wait

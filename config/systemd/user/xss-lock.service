@@ -1,0 +1,9 @@
+[Unit]
+Description=Screen locker
+PartOf=graphical-session.target
+After=graphical-session.target
+Before=graphical-apps.target
+
+[Service]
+ExecStart=/usr/bin/xss-lock --session=${XDG_SESSION_ID} --transfer-sleep-lock -- i3lock --nofork --color=000000
+Slice=session.slice

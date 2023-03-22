@@ -31,6 +31,9 @@ if test -x /usr/bin/element-desktop
 end
 mk-plain-link bin/env-diff
 mk-plain-link bin/env-dump
+if type -fq i3; and type -fq systemctl
+    mk-plain-link bin/i3-session
+end
 mk-plain-link bin/org-music
 mk-plain-link bin/rgit
 mk-plain-link bin/rre
@@ -70,6 +73,16 @@ mk-dot-link config/msmtp/gmail-password.gpg
 mk-dot-link config/picom/picom.conf
 mk-dot-link config/profile-env
 mk-dot-link config/python/startup.py
+mk-dot-link config/systemd/user/geoclue-agent.service
+mk-dot-link config/systemd/user/graphical-apps.target
+mk-dot-link config/systemd/user/i3-session.target
+mk-dot-link config/systemd/user/i3.service
+mk-dot-link config/systemd/user/lxpolkit.service
+mk-dot-link config/systemd/user/picom.service
+mk-dot-link config/systemd/user/redshift.service
+mk-dot-link config/systemd/user/wallpaper.service
+mk-dot-link config/systemd/user/xsettingsd-auto-dpi.service
+mk-dot-link config/systemd/user/xss-lock.service
 mk-dot-link config/zathura/zathurarc
 mk-dot-link gnupg/gpg-agent.conf
 mk-dot-link gnupg/scdaemon.conf
@@ -96,6 +109,10 @@ end
 # Always want pulseaudio running, not just when something tries to connect
 if type -q systemctl; and test (count (systemctl --user --no-legend list-unit-files pulseaudio.service)) -ne 0
     systemctl --user --quiet enable pulseaudio.service
+end
+
+if type -q systemctl
+    systemctl --user --quiet enable graphical-apps.target
 end
 
 exit $exit_status

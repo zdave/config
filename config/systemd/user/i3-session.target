@@ -1,0 +1,15 @@
+[Unit]
+Description=i3 session
+Wants=i3.service lxpolkit.service picom.service redshift.service wallpaper.service xsettingsd-auto-dpi.service xss-lock.service
+BindsTo=graphical-session.target
+PropagatesStopTo=graphical-session.target
+Before=graphical-session.target
+# Target units automatically complement all configured dependencies of type Wants= with
+# dependencies of type After=. We do not want this; the wanted units effectively have After=
+# dependencies on us, so this would create dependency cycles. Disable this behaviour with
+# DefaultDependencies=false. We *do* want the automatic Conflicts= and Before= dependencies against
+# shutdown.target though. These are also disabled by DefaultDependencies=false so we have to add
+# them manually.
+DefaultDependencies=false
+Conflicts=shutdown.target
+Before=shutdown.target

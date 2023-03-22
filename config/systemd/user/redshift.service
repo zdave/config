@@ -1,0 +1,9 @@
+[Unit]
+Description=Redshift
+Wants=geoclue-agent.service
+PartOf=graphical-session.target
+After=graphical-session.target
+Before=graphical-apps.target
+
+[Service]
+ExecStart=/usr/bin/redshift-gtk

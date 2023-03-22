@@ -1,0 +1,8 @@
+[Unit]
+Description=Wallpaper manager
+PartOf=graphical-session.target
+After=graphical-session.target
+Before=graphical-apps.target
+
+[Service]
+ExecStart=%h/bin/wallpaper

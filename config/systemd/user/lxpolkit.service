@@ -1,0 +1,9 @@
+[Unit]
+Description=LXDE polkit agent
+PartOf=graphical-session.target
+After=graphical-session.target
+Before=graphical-apps.target
+
+[Service]
+BusName=org.lxde.lxpolkit
+ExecStart=/usr/bin/lxpolkit
