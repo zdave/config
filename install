@@ -101,7 +101,6 @@ mk-dot-link ssh/authorized_keys
 mk-dot-link ssh/config
 mk-dot-link vim
 mk-dot-link xsession
-mk-dot-link zcash/zcash.conf
 
 if type -q dconf
     if not dconf load / <$dir/config/dconf/user.txt
