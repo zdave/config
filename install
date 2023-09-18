@@ -37,9 +37,6 @@ end
 mk-plain-link bin/org-music
 mk-plain-link bin/rgit
 mk-plain-link bin/rre
-if test -x /usr/bin/spotify
-    mk-plain-link bin/spotify
-end
 if type -fq feh
     mk-plain-link bin/wallpaper
 end
@@ -73,6 +70,7 @@ mk-dot-link config/msmtp/gmail-password.gpg
 mk-dot-link config/picom/picom.conf
 mk-dot-link config/profile-env
 mk-dot-link config/python/startup.py
+mk-dot-link config/spotify-flags.conf
 mk-dot-link config/systemd/user/geoclue-agent.service
 mk-dot-link config/systemd/user/graphical-apps.target
 mk-dot-link config/systemd/user/i3-session.target
