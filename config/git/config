@@ -14,6 +14,8 @@
 	rebase = true
 [push]
 	default = upstream
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
 [alias]
 	bdate = for-each-ref --sort=committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(end)%(refname:short)%(color:reset)' refs/heads
 	wd = diff --word-diff=color
