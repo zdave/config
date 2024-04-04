@@ -1,7 +1,6 @@
 [user]
 	name = David Emett
 	email = dave@sp4m.net
-	signingKey = 48D0382278698E86134BA5E697B5FA85C4CD069F
 [core]
 	excludesFile = ~/.config/git/ignore-global
 [merge]
@@ -19,3 +18,5 @@
 [alias]
 	bdate = for-each-ref --sort=committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(end)%(refname:short)%(color:reset)' refs/heads
 	wd = diff --word-diff=color
+[includeIf "gitdir:~/parity/"]
+	path = config-parity

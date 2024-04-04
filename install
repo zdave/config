@@ -62,6 +62,7 @@ mk-dot-link config/fish/config.fish
 mk-dot-link config/fish/functions
 mk-dot-link config/fontconfig/fonts.conf
 mk-dot-link config/git/config
+mk-dot-link config/git/config-parity
 mk-dot-link config/git/ignore-global
 mk-dot-link config/gtk-3.0/settings.ini
 mk-dot-link config/mimeapps.list
@@ -97,6 +98,7 @@ mk-dot-link parallel/will-cite
 mk-dot-link profile
 mk-dot-link ssh/authorized_keys
 mk-dot-link ssh/config
+mk-dot-link ssh/parity-yubikey-a.pub
 mk-dot-link vim
 mk-dot-link xsession
 
