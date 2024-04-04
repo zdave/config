@@ -1,6 +1,6 @@
 [user]
 	email = david.emett@parity.io
-	signingKey = 48D0382278698E86134BA5E697B5FA85C4CD069F
+	signingKey = B7399746C1279AB294D711E186F380A0D8DFB559
 [core]
 	sshCommand = ssh -i ~/.ssh/parity-yubikey-a.pub
 [commit]
