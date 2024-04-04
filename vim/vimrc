@@ -31,6 +31,10 @@ let g:pyindent_continue = "&shiftwidth"
 let g:pyindent_nested_paren = "0"
 let g:pyindent_open_paren = "&shiftwidth"
 
+set nojoinspaces
+set textwidth=99
+let g:rust_recommended_style = 0
+
 set clipboard=unnamedplus
 set noequalalways " Don't resize all windows on split/close
 set hidden " Allow hiding of modified buffers
