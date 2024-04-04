@@ -55,7 +55,7 @@ end
 
 mk-dot-link Xresources
 mk-dot-link config/RawTherapee/profiles/default.pp3
-mk-dot-link config/alacritty/alacritty.yml
+mk-dot-link config/alacritty/alacritty.toml
 mk-dot-link config/bat/config
 mk-dot-link config/chrome-flags.conf
 mk-dot-link config/fish/config.fish
