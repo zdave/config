@@ -122,7 +122,7 @@ function! s:RegenCtags()
         let d = fnamemodify(t, ":p:h")
     endif
 
-    execute "!cd" shellescape(d) "&& ctags -R --languages=c,c++ --extra=+qf --c-kinds=+p --c++-kinds=+p --fields=+S"
+    execute "!cd" shellescape(d) "&& rg --files | ctags -L - --languages=c,c++,rust --extras=+qf --c-kinds=+p --c++-kinds=+p --rust-kinds=-cme --fields=+S"
 endfunction
 nnoremap <Leader>r :call <SID>RegenCtags()<CR>
 
