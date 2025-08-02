@@ -5,9 +5,13 @@ import Xlib.ext
 import contextlib
 import os
 import random
+import select
 import shlex
 import subprocess
 import sys
+import time
+
+UPDATE_PERIOD = 60 # Seconds
 
 def images_under(root):
     for dir, dirnames, filenames in os.walk(root):
@@ -75,6 +79,20 @@ def try_update(root):
     except Exception as e:
         print(e, file=sys.stderr, flush=True)
 
+def wait_for_crtc_change_notify(display, timeout):
+    deadline = time.monotonic() + timeout
+    while timeout > 0:
+        if not select.select([display.fileno()], [], [], timeout)[0]:
+            break # Timeout
+        notified = False
+        for i in range(display.pending_events()):
+            e = display.next_event()
+            if e.__class__.__name__ == Xlib.ext.randr.CrtcChangeNotify.__name__:
+                notified = True
+        if notified:
+            break
+        timeout = deadline - time.monotonic()
+
 def main():
     with contextlib.closing(Xlib.display.Display()) as display:
         assert display.has_extension('RANDR')
@@ -82,10 +100,8 @@ def main():
         root = display.screen().root
 
         root.xrandr_select_input(Xlib.ext.randr.RRCrtcChangeNotifyMask)
-        try_update(root)
         while True:
-            e = display.next_event()
-            if e.__class__.__name__ == Xlib.ext.randr.CrtcChangeNotify.__name__:
-                try_update(root)
+            try_update(root)
+            wait_for_crtc_change_notify(display, UPDATE_PERIOD)
 
 main()
