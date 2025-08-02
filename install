@@ -82,6 +82,7 @@ mk-dot-link config/systemd/user/redshift.service
 mk-dot-link config/systemd/user/wallpaper.service
 mk-dot-link config/systemd/user/xsettingsd-auto-dpi.service
 mk-dot-link config/systemd/user/xss-lock.service
+mk-dot-link config/user-dirs.dirs
 mk-dot-link config/xfce4/helpers.rc
 mk-dot-link config/zathura/zathurarc
 mk-dot-link gnupg/gpg-agent.conf
