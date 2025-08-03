@@ -35,6 +35,9 @@ if type -fq i3; and type -fq systemctl
     mk-plain-link bin/i3-session
 end
 mk-plain-link bin/org-music
+if test -x /usr/bin/psst-gui
+    mk-plain-link bin/psst-gui
+end
 mk-plain-link bin/rgit
 mk-plain-link bin/rre
 if type -fq feh
