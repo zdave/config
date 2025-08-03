@@ -18,6 +18,6 @@
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
 [alias]
-	wd = diff --word-diff=color
+	wd = diff --word-diff
 [includeIf "gitdir:~/parity/"]
 	path = config-parity
