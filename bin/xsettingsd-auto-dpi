@@ -3,6 +3,7 @@
 import Xlib.display
 import Xlib.ext
 import contextlib
+import os
 import pathlib
 import shutil
 import signal
@@ -58,7 +59,8 @@ def main():
     signal.signal(signal.SIGTERM, lambda *args: sys.exit(0))
 
     with contextlib.ExitStack() as stack:
-        dir = stack.enter_context(tempfile.TemporaryDirectory())
+        dir = stack.enter_context(tempfile.TemporaryDirectory(
+            dir=os.environ['XDG_RUNTIME_DIR'], prefix='xsettingsd-auto-dpi-'))
         config_path = pathlib.Path(dir, 'config')
         new_config_path = pathlib.Path(dir, 'new-config')
 
