@@ -76,6 +76,7 @@ mk-dot-link config/picom/picom.conf
 mk-dot-link config/profile-env
 mk-dot-link config/python/startup.py
 mk-dot-link config/spotify-flags.conf
+mk-dot-link config/systemd/user/1password.service
 mk-dot-link config/systemd/user/geoclue-agent.service
 mk-dot-link config/systemd/user/graphical-apps.target
 mk-dot-link config/systemd/user/i3-session.target
@@ -114,8 +115,10 @@ if type -q dconf
 end
 
 if type -q systemctl
-    if not systemctl --user --quiet enable graphical-apps.target
-        set exit_status 1
+    for unit in 1password.service graphical-apps.target
+        if not systemctl --user --quiet enable $unit
+            set exit_status 1
+        end
     end
 end
 
