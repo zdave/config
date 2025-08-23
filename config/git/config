@@ -1,8 +1,15 @@
 [user]
 	name = David Emett
 	email = dave@sp4m.net
+	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMUr0Xx0Vz3vUWBdoxqRZ+3W4DSp0WUIwwGVaj48L59I
 [core]
 	excludesFile = ~/.config/git/ignore-global
+[commit]
+	gpgSign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/ssh-allowed-signers
 [merge]
 	conflictStyle = zdiff3
 [diff]

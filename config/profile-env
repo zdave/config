@@ -9,8 +9,8 @@ EOF
 export EDITOR=vim
 export PYTHONSTARTUP=~/.config/python/startup.py
 
-if test -z "$SSH_AUTH_SOCK" && command -v gpgconf >/dev/null 2>&1; then
+if test -z "$SSH_AUTH_SOCK"; then
     # If this socket doesn't exist, SSH will just continue without an agent. So don't worry about
     # checking here.
-    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    export SSH_AUTH_SOCK=~/.1password/agent.sock
 fi

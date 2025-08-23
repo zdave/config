@@ -68,6 +68,7 @@ mk-dot-link config/fontconfig/fonts.conf
 mk-dot-link config/git/config
 mk-dot-link config/git/config-parity
 mk-dot-link config/git/ignore-global
+mk-dot-link config/git/ssh-allowed-signers
 mk-dot-link config/gtk-3.0/settings.ini
 mk-dot-link config/mimeapps.list
 mk-dot-link config/msmtp/config
