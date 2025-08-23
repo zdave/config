@@ -2,6 +2,6 @@
 	email = david.emett@parity.io
 	signingKey = B7399746C1279AB294D711E186F380A0D8DFB559
 [core]
-	sshCommand = ssh -o \"IdentityAgent=$(gpgconf --list-dirs agent-ssh-socket)\" -i ~/.ssh/parity-yubikey-a.pub
+	sshCommand = ssh -o \"ControlPath=$XDG_RUNTIME_DIR/ssh-parity-master-%r@%h:%p\" -o \"IdentityAgent=$(gpgconf --list-dirs agent-ssh-socket)\" -i ~/.ssh/parity-yubikey-a.pub
 [gpg]
 	format = openpgp
