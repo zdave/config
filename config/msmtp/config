@@ -6,6 +6,6 @@ tls on
 
 auth on
 user dave@sp4m.net
-passwordeval gpg --no-tty -q -d ~/.config/msmtp/gmail-password.gpg
+passwordeval op read 'op://iadijg3gztvtpq2jebaskenhny/ok7aojnr26e2qwq5jngo7mpaja/App Passwords/config smtp'
 
 from dave@sp4m.net

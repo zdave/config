@@ -72,7 +72,6 @@ mk-dot-link config/git/ssh-allowed-signers
 mk-dot-link config/gtk-3.0/settings.ini
 mk-dot-link config/mimeapps.list
 mk-dot-link config/msmtp/config
-mk-dot-link config/msmtp/gmail-password.gpg
 mk-dot-link config/picom/picom.conf
 mk-dot-link config/profile-env
 mk-dot-link config/python/startup.py
